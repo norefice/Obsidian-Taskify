@@ -1,0 +1,9 @@
+{
+	"id": "obsidian-taskify",
+	"name": "Obsidian Taskify",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Task list with states, priority, tags, and due date. Create tasks from your notes.",
+	"author": "Nicolas Orefice",
+	"isDesktopOnly": false
+}

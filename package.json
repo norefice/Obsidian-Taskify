@@ -1,0 +1,27 @@
+{
+	"name": "obsidian-taskify",
+	"version": "1.0.0",
+	"description": "Obsidian Taskify - Task list with states, priority, tags, and due date. Create tasks from your notes.",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"lint": "eslint ."
+	},
+	"keywords": ["obsidian", "plugin", "tasks"],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/norefice/Obsidian-Taskify.git"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.6",
+		"esbuild": "0.25.5",
+		"tslib": "2.4.0",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"obsidian": "latest"
+	}
+}

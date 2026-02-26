@@ -1,0 +1,531 @@
+/* Task List Plugin - Styles */
+
+.task-plugin-container {
+	padding: 0.5em 0;
+}
+
+.task-plugin-view-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.75em;
+	margin-bottom: 1em;
+}
+
+.task-plugin-view-header h2 {
+	margin: 0;
+}
+
+.task-plugin-toolbar {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5em 1em;
+	margin-bottom: 1em;
+	padding: 0.5em 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.task-plugin-toolbar-label {
+	margin-right: 0.25em;
+}
+
+.task-plugin-toolbar-sep {
+	width: 1px;
+	height: 1.2em;
+	background: var(--background-modifier-border);
+	margin: 0 0.5em;
+}
+
+.task-plugin-filter-check {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.task-plugin-filter-check input {
+	margin-right: 0.25em;
+}
+
+.task-plugin-sort-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35em;
+	padding: 0.35em 0.5em;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.task-plugin-sort-btn:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.task-plugin-sort-btn svg {
+	width: 1.1em;
+	height: 1.1em;
+}
+
+.task-plugin-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.task-plugin-item {
+	display: flex;
+	align-items: center;
+	gap: 0.75em;
+	padding: 0.5em 0.75em;
+	margin: 0.25em 0;
+	border-radius: 6px;
+	background: var(--background-secondary);
+	border-left: 3px solid var(--text-muted);
+}
+
+.task-plugin-item[data-state="ToDo"] {
+	border-left-color: var(--color-blue);
+}
+
+.task-plugin-item[data-state="InProgress"] {
+	border-left-color: var(--color-orange);
+}
+
+.task-plugin-item[data-state="Done"] {
+	border-left-color: var(--color-green);
+	opacity: 0.85;
+}
+
+.task-plugin-item.task-plugin-item-overdue .task-content {
+	color: var(--color-red);
+	font-weight: bold;
+}
+
+.task-plugin-item .task-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.task-plugin-item .task-title {
+	font-weight: 600;
+	margin-bottom: 0.5em;
+}
+
+.task-plugin-labels {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.task-plugin-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35em;
+	padding: 0.3em 0.6em;
+	border-radius: 6px;
+	font-size: 0.8em;
+	font-weight: 500;
+	color: var(--text-on-accent);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-plugin-label-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.task-plugin-label-icon svg {
+	width: 0.95em;
+	height: 0.95em;
+}
+
+.task-plugin-label-state.ToDo {
+	background: var(--color-blue);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-state.InProgress {
+	background: var(--color-orange);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-state.Done {
+	background: var(--color-green);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-priority.Low {
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+	border-color: var(--background-modifier-border);
+}
+
+.task-plugin-label-priority.Medium {
+	background: var(--color-blue);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-priority.High {
+	background: var(--color-orange);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-priority.Highest {
+	background: var(--color-red);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-label-due {
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+	border-color: var(--background-modifier-border);
+}
+
+.task-plugin-label-tag {
+	background: var(--color-purple, var(--interactive-accent));
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-plugin-toolbar-tag-filter {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35em;
+}
+
+.task-plugin-tag-select {
+	padding: 0.35em 0.6em;
+	border-radius: 4px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 0.9em;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.task-plugin-tag-badge {
+	font-size: 0.75em;
+	padding: 0.2em 0.5em;
+	border-radius: 4px;
+	margin-left: 0.5em;
+	background: var(--color-purple, var(--interactive-accent));
+	color: var(--text-on-accent);
+}
+
+.task-plugin-item .task-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.task-plugin-item .task-actions-status {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.task-plugin-dropdown-trigger {
+	cursor: pointer;
+	font-family: inherit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.15s, color 0.15s;
+}
+
+.task-plugin-trigger-icon {
+	padding: 0.35em;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--text-muted);
+}
+
+.task-plugin-trigger-icon:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.task-plugin-trigger-icon svg {
+	width: 1em;
+	height: 1em;
+}
+
+.task-plugin-dropdown {
+	position: fixed;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15em;
+	min-width: 8em;
+	padding: 0.25em;
+	border-radius: 6px;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.task-plugin-dropdown-option {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	width: 100%;
+	justify-content: flex-start;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 0.85em;
+	padding: 0.4em 0.6em;
+	border: none;
+	border-radius: 4px;
+	text-align: left;
+	background: transparent;
+	color: var(--text-normal);
+	transition: background 0.1s;
+}
+
+.task-plugin-dropdown-option:hover {
+	background: var(--background-modifier-hover);
+}
+
+.task-plugin-dropdown-option-mini {
+	padding: 0.3em 0.5em;
+	font-size: 0.8em;
+	gap: 0.4em;
+}
+
+.task-plugin-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.task-plugin-dot-state-ToDo { background: var(--color-blue); }
+.task-plugin-dot-state-InProgress { background: var(--color-orange); }
+.task-plugin-dot-state-Done { background: var(--color-green); }
+
+.task-plugin-dot-priority-Low { background: var(--text-muted); }
+.task-plugin-dot-priority-Medium { background: var(--color-blue); }
+.task-plugin-dot-priority-High { background: var(--color-orange); }
+.task-plugin-dot-priority-Highest { background: var(--color-red); }
+
+.task-plugin-item .task-actions-edit {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	padding-left: 0.5em;
+	border-left: 1px solid var(--background-modifier-border);
+}
+
+.task-plugin-item .task-actions .task-action-icon-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.35em;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.task-plugin-item .task-actions .task-action-icon-btn:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.task-plugin-item .task-actions .task-action-icon-btn svg {
+	width: 1em;
+	height: 1em;
+}
+
+/* Task form modal - layout and sections */
+.task-plugin-modal .task-plugin-modal-title {
+	margin: 0 0 1em 0;
+	font-size: 1.25em;
+}
+
+.task-plugin-modal-section {
+	margin-bottom: 1.25em;
+}
+
+.task-plugin-modal-section-row {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+}
+
+.task-plugin-modal-section-row .task-plugin-modal-field {
+	flex: 1;
+	min-width: 140px;
+}
+
+.task-plugin-modal-label {
+	display: block;
+	font-size: 0.85em;
+	font-weight: 600;
+	color: var(--text-muted);
+	margin-bottom: 0.35em;
+}
+
+.task-plugin-modal-input {
+	width: 100%;
+	padding: 0.5em 0.6em;
+	border-radius: 6px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+.task-plugin-modal-input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+}
+
+.task-plugin-modal textarea.task-plugin-modal-input {
+	resize: vertical;
+	min-height: 4em;
+}
+
+.task-plugin-modal-pill-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-top: 0.25em;
+}
+
+.task-plugin-modal-pill {
+	padding: 0.4em 0.75em;
+	border-radius: 20px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font-size: 0.9em;
+	cursor: pointer;
+	transition: background 0.15s, border-color 0.15s;
+}
+
+.task-plugin-modal-pill:hover {
+	background: var(--background-modifier-hover);
+}
+
+.task-plugin-modal-pill.is-active {
+	border-color: var(--interactive-accent);
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-modal-pill-priority.is-active {
+	opacity: 1;
+	box-shadow: 0 0 0 2px var(--background-primary);
+}
+
+.task-plugin-modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5em;
+	margin-top: 1.5em;
+	padding-top: 1em;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.task-plugin-modal-btn-cancel {
+	padding: 0.5em 1em;
+	border-radius: 6px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.task-plugin-modal-btn-cancel:hover {
+	background: var(--background-modifier-hover);
+}
+
+.task-plugin-modal .setting-item {
+	border: none;
+}
+
+.task-plugin-modal input[type="date"] {
+	font-family: inherit;
+}
+
+/* Priority as clickable button in list (reuse badge styles) */
+.task-plugin-item .task-actions .task-plugin-priority-badge {
+	cursor: pointer;
+	border: none;
+	font-size: 0.75em;
+	padding: 0.25em 0.5em;
+}
+
+.task-plugin-item .task-actions .task-plugin-priority-badge:hover {
+	opacity: 0.9;
+	filter: brightness(1.1);
+}
+
+.task-plugin-empty {
+	text-align: center;
+	color: var(--text-muted);
+	padding: 2em 1em;
+}
+
+.task-plugin-state-badge {
+	font-size: 0.75em;
+	padding: 0.2em 0.5em;
+	border-radius: 4px;
+	font-weight: 500;
+}
+
+.task-plugin-state-badge.ToDo {
+	background: var(--color-blue);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-state-badge.InProgress {
+	background: var(--color-orange);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-state-badge.Done {
+	background: var(--color-green);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-priority-badge {
+	font-size: 0.75em;
+	padding: 0.2em 0.5em;
+	border-radius: 4px;
+	font-weight: 500;
+}
+
+.task-plugin-priority-badge.Low {
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+}
+
+.task-plugin-priority-badge.Medium {
+	background: var(--color-blue);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-priority-badge.High {
+	background: var(--color-orange);
+	color: var(--text-on-accent);
+}
+
+.task-plugin-priority-badge.Highest {
+	background: var(--color-red);
+	color: var(--text-on-accent);
+}
